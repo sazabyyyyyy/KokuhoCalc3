@@ -1,127 +1,166 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title th:text="#{content.title}">Insert title here</title>
-    <link rel="stylesheet" th:href="@{/css/index222.css}" />
-
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <title th:text="#{content.title}">国民健康保険シミュレーション</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="国保">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="国民健康保険シミュレーション">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/img/ogp.jpg">
+    <meta property="og:site_name" content="国民健康保険シミュレーション">
+    <link rel="shortcut icon" type="img/vnd.microsoft.icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" th:href="@{index222.css}" />
 </head>
 
 <body>
-    <h1 th:text="#{content.title}">Hello page</h1>
-    <p class="cat">
-        <img src="cat1.PNG" alt="ねこ">
-    </p>
+    <header id="header">
+        <div class="wrapper clearfix">
+            <h1 th:text="#{content.title}">
+                <a href="http://localhost:8080">国民健康保険シミュレーション</a>
+            </h1>
+            <ul id="hd_sns">
+            	<li><div class="fb-share-button" data-href="http://localhost:8080/" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div></li>
+            	<li><a class="twitter-share-button" href="https://twitter.com/share" data-dnt="true">Tweet</a></li>
+            	<li><div class="line-it-button" data-lang="ja" data-type="like" data-url="http://localhost:8080/" style="display: none;"></div>
+ <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="mainimg">
+          <img src="cat1.PNG" alt="ねこ">
+        </div>
+        <div class="wrapper">
+            <p id="lead">都道府県を選択してシミュレーションスタート！</p>
+
+            <table class="area_table" th:inline="text">
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>北海道</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${hkd}">
+                                <a href="http://localhost:8080/hokkaido">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>東北</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${touhoku}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>関東・甲信越</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${kantou}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>中部・北陸</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${hokuriku}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>東海</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${toukai}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>近畿</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${kinki}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>中国・四国</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${chugoku}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>九州・沖縄</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="obj: ${kyushu}">
+                                <a href="">
+                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
 
 
-    <h2 th:text="#{content.msg}"></h2>
-    <!-- <pre th:text="${data}"></pre> -->
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>
-                北海道　　　</th>
-
-        </tr>
-        <tr th:each="obj: ${hkd}">
-            <td>
-                <a href="http://localhost:8080/hokkaido">[[${obj.id}]]</a>
-            </td>
-            <td>
-                <a href="http://localhost:8080/hokkaido">[[${obj.name}]]</a>
-            </td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>東北　　　　</th>
-        </tr>
-        <tr th:each="obj: ${touhoku}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>関東　　　　</th>
-        </tr>
-        <tr th:each="obj: ${kantou}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>甲信越・北陸</th>
-        </tr>
-        <tr th:each="obj: ${hokuriku}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>東海　　　　</th>
-        </tr>
-        <tr th:each="obj: ${toukai}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>近畿　　　　</th>
-        </tr>
-        <tr th:each="obj: ${kinki}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>中国　　　　</th>
-        </tr>
-        <tr th:each="obj: ${chugoku}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>四国　　　　</th>
-        </tr>
-        <tr th:each="obj: ${sikoku}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
-    <table th:inline="text">
-        <tr>
-            <th>No.</th>
-            <th>九州・沖縄　</th>
-        </tr>
-        <tr th:each="obj: ${kyushu}">
-            <td>[[${obj.id}]]</td>
-            <td>[[${obj.name}]]</td>
-        </tr>
-    </table>
-
+        </div>
+    </main>
+    <footer id="footer">
+    	<small>&copy; 国民健康保険シミュレーション</small>
+    </footer>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
-
 </html>

@@ -86,7 +86,7 @@ public class ToppageController {
 			kyushu.add(new Dataobject (46,"鹿児島"));
 			kyushu.add(new Dataobject (47,"沖縄"));
 
-//			mav.addObject("msg", "this is sample content");
+
             mav.addObject("hkd", hkd);
             mav.addObject("touhoku", touhoku);
             mav.addObject("kantou", kantou);
@@ -103,8 +103,5 @@ public class ToppageController {
 			return mav;
 			}
 
-//	@RequestMapping("/hokkaido")
-//	public ModelAndView hokkaido(ModelAndView mav){
-//		return mav;
-//}
+
 	}
