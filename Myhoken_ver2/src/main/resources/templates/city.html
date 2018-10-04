@@ -1,14 +1,61 @@
-<!-- 市町村選択ページ -->
+<!-- 北海道市町村選択ページ -->
 <!DOCTYPE html>
-<html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title th:text="#{content.title}">Insert title here</title>
+    <link rel="stylesheet" th:href="@{city.css}" />
+
 </head>
 
 <body>
+    <header id="header">
+        <div class="wrapper clearfix">
+            <h1 th:text="#{content.title}">
+                <a href="http://localhost:8080">国民健康保険シミュレーション</a>
+            </h1>
+            <ul id="hd_sns">
+                <li>
+                    <div class="fb-share-button" data-href="http://localhost:8080/" data-layout="button" data-size="small" data-mobile-iframe="true">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse"
+                            class="fb-xfbml-parse-ignore">シェア</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="twitter-share-button" href="https://twitter.com/share" data-dnt="true">Tweet</a>
+                </li>
+                <li>
+                    <div class="line-it-button" data-lang="ja" data-type="like" data-url="http://localhost:8080/" style="display: none;"></div>
+                    <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- <h1 th:text="#{content.title}">Hello page</h1> -->
+    <p class="cat">
+        <img src="cat1.PNG" alt="ねこ">
+    </p>
 
+
+    <h2 th:text="#{content.sichou}"></h2>
+    <!-- <pre th:text="${data}"></pre> -->
+
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>
+                北海道　　　</th>
+        </tr>
+        <tr th:each="obj: ${hk}">
+            <td>[[${obj.id}]]</td>
+           <td> <a href="http://localhost:8080/city/calc">[[${obj.name}]]</a></td>
+        </tr>
+    </table>
+
+    <footer id="footer">
+        <small>&copy; 国民健康保険シミュレーション</small>
+    </footer>
 </body>
 
 </html>

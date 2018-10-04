@@ -1,0 +1,120 @@
+@charset "UTF-8";
+html {
+    -webkit-text-size-adjust: 100%;
+}
+* {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    font-weight: inherit;
+    font-size: inherit;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-size: 14px;
+    font-family: "Yu Gothic", "YuGothic", "游ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Meiryo", "メイリオ", Helvetica, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #333;
+    background: #fff;
+}
+a {
+    color: #333;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+li {
+    list-style-type: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+/* clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    min-height: 1px;
+}
+* html .clearfix {
+    height: 1px;
+    /*\*//*/
+    height: auto;
+    overflow: hidden;
+    /**/
+}
+#container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.wrapper {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    clear: both;
+    box-sizing: border-box;
+}
+
+/***** Header ******************************/
+#header {
+    width: 100%;
+    height: 120px;
+    font-size: 18pt;
+    font-weight: bold;
+    color: gray;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+/* Logo */
+#header h1 {
+	float: left;
+}
+/* SNS Btn */
+#header ul#hd_sns {
+	float: right;
+	text-align: right;
+}
+#header ul#hd_sns li {
+	display: inline-block;
+	vertical-align: middle;
+}
+.fb_iframe_widget > span {
+  vertical-align: baseline !important;
+}
+
+/***** MainContents ******************************/
+/* Neko */
+#mainimg {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+#mainimg img {
+    max-width: initial;
+    width: 100%;
+}
+/***** Footer ******************************/
+#footer {
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	background-color: #777;
+	margin-top: 40px;
+}
+#footer small {
+	font-size: 10px;
+	color: #fff;
+}

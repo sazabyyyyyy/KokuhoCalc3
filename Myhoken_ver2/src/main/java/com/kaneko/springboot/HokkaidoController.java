@@ -6,14 +6,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * @author Takuya Kaneko
+ *市町村選択クラス
+ */
 @Controller
 public class HokkaidoController {
 
 
-@RequestMapping("/hokkaido")
-	public ModelAndView hokkaido(ModelAndView mav) {
+@RequestMapping("/city")
+	public ModelAndView city(ModelAndView mav) {
 		// TODO 自動生成されたメソッド・スタブ
-		mav.setViewName("hokkaido");
+
+	 //使用するビューの名前(HTMLファイル名）を入力（テンプレート）
+		mav.setViewName("city");
+
+		//HKの変数に市町村を格納する。
+		//thymeleafのeach文とインライン処理で埋め込んだ変数からHTML出力する。
 		ArrayList<Dataobject>hk=new ArrayList<Dataobject>();
 		hk.add(new Dataobject (1  ,"札幌市"));
 		hk.add(new Dataobject (2  ,"函館市"));
@@ -195,6 +204,7 @@ public class HokkaidoController {
 		hk.add(new Dataobject (178,"標津町"));
 		hk.add(new Dataobject (179,"羅臼町"));
 
+		//テンプレート側の変数（左）に格納した配列変数（右）を保管する
 		mav.addObject("hk", hk);
 
          return mav;

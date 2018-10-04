@@ -9,17 +9,25 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kaneko.springboot.repositories.MyDataRepository;
 
+/**
+ * @author Takuya Kaneko
+ *トップページ　都道府県選択クラス
+ */
 @Controller
 public class ToppageController {
 
+	//データベース接続に使うアノテーション。今は使わない。
 	@Autowired
 	MyDataRepository repository;
 
-	@RequestMapping("/")
+	@RequestMapping("/")//URLと処理を関連付ける
 	public ModelAndView index(ModelAndView mav){
 
-
+           //使用するビューの名前(HTMLファイル名）を入力（テンプレート）
 			mav.setViewName("index");
+
+			//各地方の変数配列に都道府県を格納する。
+			//thymeleafのeach文とインライン処理で埋め込んだ変数からHTML出力する。
 			ArrayList<Dataobject>hkd=new ArrayList<Dataobject>();
 			hkd.add(new Dataobject (1,"北海道"));
 
@@ -87,6 +95,7 @@ public class ToppageController {
 			kyushu.add(new Dataobject (47,"沖縄"));
 
 
+			//テンプレート側の変数（左）に格納した配列変数（右）を保管する
             mav.addObject("hkd", hkd);
             mav.addObject("touhoku", touhoku);
             mav.addObject("kantou", kantou);

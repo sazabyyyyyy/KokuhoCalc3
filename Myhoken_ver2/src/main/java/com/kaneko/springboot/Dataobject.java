@@ -1,5 +1,10 @@
 package com.kaneko.springboot;
 
+/**
+ * @author Takuya Kaneko
+ * *データを管理するクラス。getter setter
+ *各Controllerで扱うデータを記述しておく。
+ */
 public class Dataobject {
     private  int id;
     private String name;
