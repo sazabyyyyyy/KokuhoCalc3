@@ -1,183 +1,38 @@
+<!--保険料計算-->
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title th:text="#{content.title}">Insert title here</title>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <title th:text="#{content.title}">国民健康保険シミュレーション</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="国保">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="国民健康保険シミュレーション">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/img/ogp.jpg">
+    <meta property="og:site_name" content="国民健康保険シミュレーション">
+    <link rel="shortcut icon" type="img/vnd.microsoft.icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" th:href="@{calc.css}" />
-    <style>
-    @charset "UTF-8";
-html {
-    -webkit-text-size-adjust: 100%;
-}
-* {
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    font-weight: inherit;
-    font-size: inherit;
-}
-body {
-            font-size: 40pt;
-            color: gray;
-            margin: 5px 18px;
-            text-align: center;
-
-        }
-
-
-        h1 {
-            font-size: 40px;
-            font-weight: bold;
-            color: gray;
-            text-align: center;
-        }
-
-        p.age {
-            font-size: 75px;
-            color: gray;
-        }
-
-        input[type="radio"] {
-            -webkit-transform: scale(3.0);
-            transform: scale(3.0);
-            margin-right: 0.5em;
-        }
-
-        p.nenshu {
-            font-size: 75px;
-            color: gray;
-        }
-
-        select#select1 {
-            width: 120px !important;
-            height: 75px;
-            font-size: 50px;
-            color: gray;
-
-        }
-
-        button.button7 {
-            width: 300px;
-            height: 60px;
-            border-radius: 3px;
-            box-shadow: 0 3px 0 rgba(136, 136, 136, 1);
-            background-color: gray;
-            color: white;
-            font-size: 22px;
-            margin: 40px auto;
-        }
-
-        button.button7:hover {
-            box-shadow: 0 0 0 rgba(136, 136, 136, 1);
-            background-color: #333;
-        }
-a {
-    color: #333;
-    outline: none;
-    text-decoration: none;
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-}
-li {
-    list-style-type: none;
-}
-img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-}
-/* clearfix */
-.clearfix:after {
-    content: ".";
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden;
-}
-.clearfix {
-    min-height: 1px;
-}
-* html .clearfix {
-    height: 1px;
-    /*\*//*/
-    height: auto;
-    overflow: hidden;
-    /**/
-}
-#container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.wrapper {
-    width: 1200px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: left;
-    clear: both;
-    box-sizing: border-box;
-}
-
-/***** Header ******************************/
-#header {
-    width: 100%;
-    height: 120px;
-    font-size: 18pt;
-    font-weight: bold;
-    color: gray;
-    padding-top: 40px;
-    box-sizing: border-box;
-}
-/* Logo */
-#header h1 {
-	float: left;
-}
-/* SNS Btn */
-#header ul#hd_sns {
-	float: right;
-	text-align: right;
-}
-#header ul#hd_sns li {
-	display: inline-block;
-	vertical-align: middle;
-}
-.fb_iframe_widget > span {
-  vertical-align: baseline !important;
-}
-
-/***** MainContents ******************************/
-/* Neko */
-#mainimg {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 50px;
-}
-#mainimg img {
-    max-width: initial;
-    width: 100%;
-}
-/***** Footer ******************************/
-#footer {
-	height: 80px;
-	line-height: 80px;
-	text-align: center;
-	background-color: #777;
-	margin-top: 40px;
-}
-#footer small {
-	font-size: 10px;
-	color: #fff;
-}
-    </style>
 </head>
-<body>
 
+<body>
     <header id="header">
         <div class="wrapper clearfix">
-            <h1 th:text="#{content.title}">
-                <a href="http://localhost:8080">国民健康保険シミュレーション</a>
+
+            <h1>
+                <a th:href="@{http://localhost:8080}">国民健康保険シミュレーション </a>
             </h1>
+
             <ul id="hd_sns">
                 <li>
                     <div class="fb-share-button" data-href="http://localhost:8080/" data-layout="button" data-size="small" data-mobile-iframe="true">
@@ -196,34 +51,21 @@ img {
         </div>
     </header>
     <!-- <h1 th:text="#{content.title}">Hello page</h1> -->
-    <p class="cat">
-        <img src="cat1.PNG" alt="ねこ">
-    </p>
-
-
-
-
-
-
-
-
-
-    <h1>札幌市国民保険計算</h1>
+	<main>
+	<div id="mainimg">
+            <img src="cat1.PNG" alt="ねこ">
+	</div>
+	<div class="wrapper">
+    <p id="lead">札幌市国民保険計算</p>
+    <form action="/calc" method="post">
     <p class='age' th:text="${msg}">please wait...</p>
+	<ul id="select_age">
+        <li><label for="radioA"><input type="radio" id="radioA" name="radio1" value="39" checked>&nbsp;39歳以下</label></li>
+        <li><label for="radioB"><input type="radio" id="radioB" name="radio1" value="40">&nbsp;40歳以上</label></li>
+	</ul>
 
-
-    <form action="/city/calc/post" method="post">
-
-        <div>
-            <input type="radio" id="radioA" name="radio1" value="39" checked>
-            <label for="radioA">39歳以下</label>
-            <input type="radio" id="radioB" name="radio1" value="40">
-            <label for="radioB">40歳以上</label>
-        </div>
-        <div>
-            <p class="nenshu"> 昨年の年収を選んでください</p>
-        </div>
-        <div>
+    <p class="nenshu">昨年の年収を選んでください</p>
+    <div id="select_money">
             <select name="select1" id="select1">
                 <option value="100">100</option>
                 <option value="120">120</option>
@@ -246,15 +88,28 @@ img {
                 <option value="850">850</option>
                 <option value="900">900</option>
 
-            </select>万円
-        </div>
-        <div>
+            </select>&nbsp;万円
+	</div>
+    <div id="btn">
             <button class="button7" type="submit">計算</button>
-        </div>
+    </div>
     </form>
- <footer id="footer">
+    </div>
+    </main>
+ 	<footer id="footer">
         <small>&copy; 国民健康保険シミュレーション</small>
     </footer>
+     <script>
+        window.twttr = (function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function (f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));
+    </script>
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 
 </html>

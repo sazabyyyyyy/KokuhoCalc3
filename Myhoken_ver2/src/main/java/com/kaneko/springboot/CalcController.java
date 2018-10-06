@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CalcController {
 
 	//メソッドを指定してGETとPOSTを区別して書く。
-	@RequestMapping(value="/city/calc",method=RequestMethod.GET)
+	@RequestMapping(value="/calc",method=RequestMethod.GET)
 	public ModelAndView calc(ModelAndView mav){
 
 
@@ -26,7 +26,7 @@ public class CalcController {
 			return mav;
 			}
 
-	@RequestMapping(value="/city/calc/post",method=RequestMethod.POST)
+	@RequestMapping(value="/calc",method=RequestMethod.POST)
 	//sendメソッドでフォームからの入力を受け取る
 	public ModelAndView send(
 			//フォーム送信された値を指定するためのアノテーション

@@ -74,13 +74,16 @@ img {
     height: 120px;
     font-size: 18pt;
     font-weight: bold;
-    color: gray;
+
     padding-top: 40px;
     box-sizing: border-box;
 }
 /* Logo */
 #header h1 {
 	float: left;
+}
+#header h1 a {
+	color: gray;
 }
 /* SNS Btn */
 #header ul#hd_sns {

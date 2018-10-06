@@ -1,5 +1,6 @@
+<!-- TopPage 都道府県選択 -->
 <!DOCTYPE html>
-<!-- タイムリーフ宣言 -->
+<!-- thymeleaf宣言 -->
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
@@ -28,9 +29,11 @@
 <body>
     <header id="header">
         <div class="wrapper clearfix">
-            <h1 th:text="#{content.title}">
-                <a href="http://localhost:8080">国民健康保険シミュレーション</a>
+
+            <h1>
+                <a th:href="@{http://localhost:8080}">国民健康保険シミュレーション </a>
             </h1>
+
             <ul id="hd_sns">
                 <li>
                     <div class="fb-share-button" data-href="http://localhost:8080/" data-layout="button" data-size="small" data-mobile-iframe="true">

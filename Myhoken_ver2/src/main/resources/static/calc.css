@@ -1,1 +1,61 @@
 @import url("global.css");
+
+p#lead {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+p.age,
+p.nenshu {
+	font-size: 26px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	text-align: center;
+}
+ul#select_age {
+	text-align: center;
+	margin: 0 auto 40px;
+}
+ul#select_age li {
+	display: inline-block;
+	padding: 0 20px;
+}
+ul#select_age li label {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	padding: 8px;
+	font-size: 20px;
+}
+ul#select_age li label:checked {
+	background-color: #eee;
+}
+#select_money {
+	text-align: center;
+	margin: 0 auto 40px;
+}
+#select_money select#select1 {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 20px;
+}
+#btn {
+	text-align: center;
+}
+.button7{
+	width:400px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 26px;
+    background-color: gray;
+    color:black;
+    display: block;
+    cursor: pointer;
+    margin: 40px auto;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+}
+.button7:hover {
+	background-color: pink;
+}
+

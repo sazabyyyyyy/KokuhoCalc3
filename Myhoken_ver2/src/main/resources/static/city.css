@@ -1,1 +1,46 @@
 @import url("global.css");
+
+p#lead {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+table#city_tbl {
+	width: 100%;
+	border-collapse: collapse:
+	margin: 0 auto;
+}
+table#city_tbl th {
+	width: 20%;
+	background-color: #ccc;
+	padding: 10px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+}
+table#city_tbl th span {
+	display: none;
+}
+table#city_tbl td {
+	padding: 10px 20px;
+}
+table#city_tbl td ul li {
+	width: 20%;
+	float: left;
+	padding: 5px;
+	box-sizing: border-box;
+}
+table#city_tbl td ul li a {
+	padding: 5px;
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	color: #777;
+	font-size: 20px;
+}
+table#city_tbl td ul li a:hover {
+	color: pink;
+}
+table#city_tbl td ul li a span {
+	display: none;
+}
