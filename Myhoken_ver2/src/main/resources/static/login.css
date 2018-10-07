@@ -1,0 +1,61 @@
+@import url("global.css");
+
+p#lead {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+        #loginbox {
+            width: 70%;
+            padding: 60px;
+            margin: 40px auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #loginbox table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        #loginbox table th {
+            width: 42%;
+            padding: 10px 60px 10px 0;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        #loginbox table td {
+            padding: 10px;
+        }
+
+        #loginbox table td input {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        #btn {
+            text-align: center;
+        }
+
+        #btn button {
+            width: 400px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 26px;
+            background-color: gray;
+            color: black;
+            display: block;
+            cursor: pointer;
+            margin: 40px auto 0;
+            transition: all ease 0.3s;
+            -webkit-transition: all ease 0.3s;
+        }
+
+        #btn button:hover {
+            background-color: pink;
+        }

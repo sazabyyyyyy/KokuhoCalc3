@@ -49,6 +49,7 @@
                     <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
                 </li>
             </ul>
+             <p id="hd_login"><a href="http://localhost:8080/login">会員ログイン<i class="fas fa-unlock"></i></a></p>
         </div>
     </header>
     <main>
@@ -68,9 +69,9 @@
                         <ul class="clearfix">
 
                             <!-- thymeleafのeach文とインライン処理で埋め込んだ変数配列からHTML出力する。 -->
-                            <li th:each="obj: ${hkd}">
+                            <li th:each="hokkaido: ${hokkaido}">
                                 <a href="http://localhost:8080/city">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>1</span>[[${hokkaido.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
@@ -80,9 +81,9 @@
                         <i class="fas fa-map-marker-alt"></i>東北</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${touhoku}">
+                            <li th:each="touhoku: ${touhoku}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>2</span>[[${touhoku.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
@@ -92,9 +93,9 @@
                         <i class="fas fa-map-marker-alt"></i>関東・甲信越</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${kantou}">
+                            <li th:each="kantou: ${kantou}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>3</span>[[${kantou.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
@@ -105,9 +106,9 @@
                         <i class="fas fa-map-marker-alt"></i>中部・北陸</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${hokuriku}">
+                            <li th:each="hokuriku: ${hokuriku}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>4</span>[[${hokuriku.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
@@ -117,9 +118,9 @@
                         <i class="fas fa-map-marker-alt"></i>東海</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${toukai}">
+                            <li th:each="toukai: ${toukai}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>5</span>[[${toukai.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
@@ -129,21 +130,33 @@
                         <i class="fas fa-map-marker-alt"></i>近畿</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${kinki}">
+                            <li th:each="kinki: ${kinki}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>6</span>[[${kinki.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <i class="fas fa-map-marker-alt"></i>中国・四国</th>
+                        <i class="fas fa-map-marker-alt"></i>中国</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${chugoku}">
+                            <li th:each="chugoku: ${chugoku}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>7</span>[[${chugoku.get('name')}]]</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-map-marker-alt"></i>四国</th>
+                    <td>
+                        <ul class="clearfix">
+                            <li th:each="sikoku: ${sikoku}">
+                                <a href="">
+                                    <span>8</span>[[${sikoku.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>
@@ -153,9 +166,9 @@
                         <i class="fas fa-map-marker-alt"></i>九州・沖縄</th>
                     <td>
                         <ul class="clearfix">
-                            <li th:each="obj: ${kyushu}">
+                            <li th:each="kyushu: ${kyushu}">
                                 <a href="">
-                                    <span>[[${obj.id}]]</span>[[${obj.name}]]</a>
+                                    <span>9</span>[[${kyushu.get('name')}]]</a>
                             </li>
                         </ul>
                     </td>

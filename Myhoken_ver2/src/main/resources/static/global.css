@@ -74,9 +74,11 @@ img {
     height: 120px;
     font-size: 18pt;
     font-weight: bold;
-
-    padding-top: 40px;
     box-sizing: border-box;
+}
+#header .wrapper {
+    padding-top: 40px;
+    position: relative;
 }
 /* Logo */
 #header h1 {
@@ -96,6 +98,24 @@ img {
 }
 .fb_iframe_widget > span {
   vertical-align: baseline !important;
+}
+/* Login Btn */
+p#hd_login {
+    width: 150px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+p#hd_login a {
+    width: 100%;
+    display: block;
+    line-height: 36px;
+    background-color: pink;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 0 0 4px 4px;
 }
 
 /***** MainContents ******************************/

@@ -1,5 +1,6 @@
-<!-- 市町村選択ページ -->
+<!-- TopPage 都道府県選択 -->
 <!DOCTYPE html>
+<!-- thymeleaf宣言 -->
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
@@ -22,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
         type="text/css" media="all" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-    <link rel="stylesheet" th:href="@{city.css}" />
+    <link rel="stylesheet" th:href="@{login.css}" />
 </head>
 
 <body>
@@ -48,34 +49,34 @@
                     <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
                 </li>
             </ul>
-             <p id="hd_login"><a href="http://localhost:8080/login">会員ログイン<i class="fas fa-unlock"></i></a></p>
+            <p id="hd_login"><a href="">会員ログイン<i class="fas fa-unlock"></i></a></p>
         </div>
     </header>
-
     <main>
         <div id="mainimg">
             <img src="cat1.PNG" alt="ねこ">
         </div>
-
         <div class="wrapper">
-            <p id="lead" th:text="#{content.sichou}"></p>
-
-            <!-- リンクを付けるためにインライン処理する -->
-            <table id="city_tbl" th:inline="text">
-                <tr>
-                    <th>
-                        <span>No.</span>北海道</th>
-                    <td>
-                        <ul class="clearfix">
-                            <li th:each="hokkaido : ${hokkaido}">
-                                <a th:href="@{http://localhost:8080/calc}">
-                                    <span>1</span>[[${hokkaido.get('name')}]]</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-
+            <p id="lead">会員ログイン</p>
+            <div id="loginbox">
+                <table>
+                    <tr>
+                        <th>会員ID</th>
+                        <td>
+                            <input type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>パスワード</th>
+                        <td>
+                            <input type="password">
+                        </td>
+                    </tr>
+                </table>
+                <div id="btn">
+                    <button type="submit">ログイン</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer id="footer">
