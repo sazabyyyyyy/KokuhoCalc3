@@ -6,6 +6,8 @@
 ・Eclipse,VSC <br>
 ・JDK1.8.0 <br>
 ・SpringBoot2.0<br>
+・jdbc<br>
+・postgeSQL9.6.10<br>
 ・Maven <br>
 ・Thymeleaf <br>
 ・raspberryPi<br>
