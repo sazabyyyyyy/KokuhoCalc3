@@ -103,7 +103,7 @@ public ModelAndView city9(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
 	list=jdbcTemplate.queryForList("select * from tochigi");
-	mav.addObject("tochigi ", list);
+	mav.addObject("tochigi", list);
 	return mav;
 }
 @RequestMapping("/10")
@@ -118,301 +118,308 @@ public ModelAndView city10(ModelAndView mav) {
 public ModelAndView city11(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from saitama");
+	mav.addObject("saitama", list);
 	return mav;
 }
 @RequestMapping("/12")
 public ModelAndView city12(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from chiba");
+	mav.addObject("chiba", list);
 	return mav;
 }
 @RequestMapping("/13")
 public ModelAndView city13(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from tokyo");
+	mav.addObject("tokyo", list);
 	return mav;
 }
 @RequestMapping("/14")
 public ModelAndView city14(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from kanagawa");
+	mav.addObject("kanagawa", list);
 	return mav;
 }
 @RequestMapping("/15")
 public ModelAndView city15(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from niigata");
+	mav.addObject("niigata", list);
 	return mav;
 }
 @RequestMapping("/16")
 public ModelAndView city16(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from toyama");
+	mav.addObject("toyama", list);
 	return mav;
 }
 @RequestMapping("/17")
 public ModelAndView city17(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from ishikawa");
+	mav.addObject("ishikawa", list);
 	return mav;
 }
 @RequestMapping("/18")
 public ModelAndView city18(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from fukui");
+	mav.addObject("fukui", list);
 	return mav;
 }
 @RequestMapping("/19")
 public ModelAndView city19(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from yamanashi");
+	mav.addObject("yamanashi", list);
 	return mav;
 }
 @RequestMapping("/20")
 public ModelAndView city20(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from nagano");
+	mav.addObject("nagano", list);
 	return mav;
 }
 @RequestMapping("/21")
 public ModelAndView city21(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from gifu");
+	mav.addObject("gifu", list);
 	return mav;
 }
 @RequestMapping("/22")
 public ModelAndView city22(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from shizuoka");
+	mav.addObject("shizuoka", list);
 	return mav;
 }
 @RequestMapping("/23")
 public ModelAndView city23(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from aichi");
+	mav.addObject("aichi", list);
 	return mav;
 }
 @RequestMapping("/24")
 public ModelAndView city24(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from mie");
+	mav.addObject("mie", list);
 	return mav;
 }
 @RequestMapping("/25")
 public ModelAndView city25(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from shiga");
+	mav.addObject("shiga", list);
 	return mav;
 }
 @RequestMapping("/26")
 public ModelAndView city26(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from kyoto");
+	mav.addObject("kyoto", list);
 	return mav;
 }
 @RequestMapping("/27")
 public ModelAndView city27(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from oosaka");
+	mav.addObject("oosaka", list);
 	return mav;
 }
 @RequestMapping("/28")
 public ModelAndView city28(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from hyougo");
+	mav.addObject("hyougo", list);
 	return mav;
 }
 @RequestMapping("/29")
 public ModelAndView city29(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from nara");
+	mav.addObject("nara", list);
 	return mav;
 }
 @RequestMapping("/30")
 public ModelAndView city30(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from wakayama");
+	mav.addObject("wakayama", list);
 	return mav;
 }
 @RequestMapping("/31")
 public ModelAndView city31(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from tottori");
+	mav.addObject("tottori", list);
 	return mav;
 }
 @RequestMapping("/32")
 public ModelAndView city32(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from shimane");
+	mav.addObject("shimane", list);
 	return mav;
 }
 @RequestMapping("/33")
 public ModelAndView city33(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from okayama");
+	mav.addObject("okayama", list);
 	return mav;
 }
 @RequestMapping("/34")
 public ModelAndView city34(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from hiroshima");
+	mav.addObject("hiroshima", list);
 	return mav;
 }
 @RequestMapping("/35")
 public ModelAndView city35(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from yamaguchi");
+	mav.addObject("yamaguchi", list);
 	return mav;
 }
 @RequestMapping("/36")
 public ModelAndView city36(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from tokushima");
+	mav.addObject("tokushima", list);
 	return mav;
 }
 @RequestMapping("/37")
 public ModelAndView city37(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from kagawa");
+	mav.addObject("kagawa", list);
 	return mav;
 }
 @RequestMapping("/38")
 public ModelAndView city38(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from ehime");
+	mav.addObject("ehime", list);
 	return mav;
 }
 @RequestMapping("/39")
 public ModelAndView city39(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from kouchi");
+	mav.addObject("kouchi", list);
 	return mav;
 }
 @RequestMapping("/40")
 public ModelAndView city40(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from fukuoka");
+	mav.addObject("fukuoka", list);
 	return mav;
 }
 @RequestMapping("/41")
 public ModelAndView city41(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from saga");
+	mav.addObject("saga", list);
 	return mav;
 }
 @RequestMapping("/42")
 public ModelAndView city42(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from nagasaki");
+	mav.addObject("nagasaki", list);
 	return mav;
 }
 @RequestMapping("/43")
 public ModelAndView city43(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
-	return mav;
-}
-@RequestMapping("/44")
-public ModelAndView city44(ModelAndView mav) {
-	mav.setViewName("city");
-	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
-	return mav;
-}
-@RequestMapping("/45")
-public ModelAndView city45(ModelAndView mav) {
-	mav.setViewName("city");
-	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from kumamoto");
+	mav.addObject("kumamoto", list);
 	return mav;
 }
 @RequestMapping("/46")
+public ModelAndView city44(ModelAndView mav) {
+	mav.setViewName("city");
+	List<Map<String,Object>>list;
+	list=jdbcTemplate.queryForList("select * from kagoshima");
+	mav.addObject("kagoshima", list);
+	return mav;
+}
+@RequestMapping("/44")
+public ModelAndView city45(ModelAndView mav) {
+	mav.setViewName("city");
+	List<Map<String,Object>>list;
+	list=jdbcTemplate.queryForList("select * from ooita");
+	mav.addObject("ooita", list);
+	return mav;
+}
+@RequestMapping("/45")
 public ModelAndView city46(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from miyazaki");
+	mav.addObject("miyazaki", list);
 	return mav;
 }
 @RequestMapping("/47")
 public ModelAndView city47(ModelAndView mav) {
 	mav.setViewName("city");
 	List<Map<String,Object>>list;
-	list=jdbcTemplate.queryForList("select * from ");
-	mav.addObject("", list);
+	list=jdbcTemplate.queryForList("select * from okinawa");
+	mav.addObject("okinawa", list);
 	return mav;
 }
 
 
 
+//@RequestMapping("/{id}")
+//public ModelAndView city48(@PathVariable int id,ModelAndView mav) {
+//	mav.setViewName("index");
+//	mav.addObject("id",id);
+//	return mav;
+//
+//}
 
 
 

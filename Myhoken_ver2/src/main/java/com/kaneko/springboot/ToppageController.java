@@ -30,6 +30,9 @@ public class ToppageController {
 			//各地方の変数配列に都道府県をデータベースから抽出して配列に格納する。
 			//thymeleafのeach文とインライン処理で埋め込んだ変数からHTML出力する。
 
+			List<Map<String,Object>>zenkoku;
+			zenkoku=jdbcTemplate.queryForList("select * from aria");
+
 			List<Map<String,Object>>hokkaido;
 			hokkaido=jdbcTemplate.queryForList("select * from aria where id = 1");
 
@@ -70,10 +73,14 @@ public class ToppageController {
             mav.addObject("chugoku", chugoku);
             mav.addObject("sikoku", sikoku);
             mav.addObject("kyushu", kyushu);
+            mav.addObject("zenkoku", zenkoku);
+
 
 //
 			return mav;
 			}
+
+//
 
 
 	}

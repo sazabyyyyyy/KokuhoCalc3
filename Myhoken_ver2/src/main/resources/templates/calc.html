@@ -26,30 +26,8 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="wrapper clearfix">
+    <header id="header" th:include="incl :: header">
 
-            <h1>
-                <a th:href="@{http://localhost:8080}">国民健康保険シミュレーション </a>
-            </h1>
-
-            <ul id="hd_sns">
-                <li>
-                    <div class="fb-share-button" data-href="http://localhost:8080/" data-layout="button" data-size="small" data-mobile-iframe="true">
-                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse"
-                            class="fb-xfbml-parse-ignore">シェア</a>
-                    </div>
-                </li>
-                <li>
-                    <a class="twitter-share-button" href="https://twitter.com/share" data-dnt="true">Tweet</a>
-                </li>
-                <li>
-                    <div class="line-it-button" data-lang="ja" data-type="like" data-url="http://localhost:8080/" style="display: none;"></div>
-                    <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-                </li>
-            </ul>
-             <p id="hd_login"><a href="http://localhost:8080/login">会員ログイン<i class="fas fa-unlock"></i></a></p>
-        </div>
     </header>
     <!-- <h1 th:text="#{content.title}">Hello page</h1> -->
 	<main>
@@ -97,20 +75,14 @@
     </form>
     </div>
     </main>
- 	<footer id="footer">
-        <small>&copy; 国民健康保険シミュレーション</small>
+ 	   <footer id="footer" th:include="incl :: footer">
+
     </footer>
-     <script>
-        window.twttr = (function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function (f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));
-    </script>
+    <script th:include="incl :: script1">
+            </script>
     <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.1';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+    <script th:include="incl :: script2">
+          </script>
 </body>
 
 </html>
