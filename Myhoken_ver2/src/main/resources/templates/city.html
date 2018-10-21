@@ -44,12 +44,14 @@
                         <span>No.</span>北海道</th>
                     <td>
                         <ul class="clearfix">
+                          <!-- thymeleafのeach文とインライン処理で埋め込んだ変数配列からHTML出力する。 -->
                             <li th:each="hokkaido : ${hokkaido}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                            <!-- 各都市にリンク付ける。都道府県idのあとに都市のidをつける。配列の中身をeach文で出力（2～7） -->
+                                <a th:href="@{'/1/'+${hokkaido.get('id')}+'/calc'}">
                                     <span>1</span>[[${hokkaido.get('name')}]]</a>
                             </li>
                             <li th:each="aomori : ${aomori}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/2/'+${aomori.get('id')}+'/calc'}">
                                     <span>1</span>[[${aomori.get('name')}]]</a>
                             </li>
                             <li th:each="iwate : ${iwate}">

@@ -16,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class CalcController {
 
 	//メソッドを指定してGETとPOSTを区別して書く。
+
+
 	@RequestMapping(value="/calc",method=RequestMethod.GET)
 	public ModelAndView calc(ModelAndView mav){
 
