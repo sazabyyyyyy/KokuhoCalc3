@@ -1,6 +1,7 @@
 package com.kaneko.springboot;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,8 +19,9 @@ public class CalcController {
 	//メソッドを指定してGETとPOSTを区別して書く。
 
 
-	@RequestMapping(value="/calc",method=RequestMethod.GET)
-	public ModelAndView calc(ModelAndView mav){
+	//URLのパラメータをnumで受け取り、numを使用するために@PathVariableをつける。
+	@RequestMapping(value="/{num1}/{num2}/calc",method=RequestMethod.GET)
+	public ModelAndView calc(ModelAndView mav,@PathVariable int num1,@PathVariable int num2){
 
 
 			mav.setViewName("calc");

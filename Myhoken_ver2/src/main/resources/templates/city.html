@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
         type="text/css" media="all" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-    <link rel="stylesheet" th:href="@{city.css}" />
+    <link rel="stylesheet" th:href="@{/city.css}" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@
     </header>
     <main>
         <div id="mainimg">
-            <img src="cat1.PNG" alt="ねこ">
+            <img src="/cat1.PNG" alt="ねこ">
         </div>
 
         <div class="wrapper">
@@ -55,230 +55,230 @@
                                     <span>1</span>[[${aomori.get('name')}]]</a>
                             </li>
                             <li th:each="iwate : ${iwate}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 3/'+${iwate    .get('id')}+'/calc'}">
                                     <span>1</span>[[${iwate.get('name')}]]</a>
 
                             </li>
                             <li th:each="miyagi : ${miyagi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 4/'+${miyagi   .get('id')}+'/calc'}">
                                     <span>1</span>[[${miyagi.get('name')}]]</a>
 
                             </li>
                             <li th:each="akita : ${akita}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 5/'+${akita    .get('id')}+'/calc'}">
                                     <span>1</span>[[${akita.get('name')}]]</a>
 
                             </li>
                             <li th:each="yamagata : ${yamagata}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 6/'+${yamagata .get('id')}+'/calc'}">
                                     <span>1</span>[[${yamagata.get('name')}]]</a>
 
                             </li>
                             <li th:each=" fukushima: ${fukushima}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 7/'+${fukushima.get('id')}+'/calc'}">
                                     <span>1</span>[[${fukushima.get('name')}]]</a>
 
                             </li>
                             <li th:each=" ibaragi: ${ibaragi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 8/'+${ibaragi  .get('id')}+'/calc'}">
                                     <span>1</span>[[${ibaragi.get('name')}]]</a>
 
                             </li>
                             <li th:each="tochigi: ${tochigi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/ 9/'+${tochigi  .get('id')}+'/calc'}">
                                     <span>1</span>[[${tochigi.get('name')}]]</a>
 
                             </li>
                             <li th:each="gunma : ${gunma}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/10/'+${gunma    .get('id')}+'/calc'}">
                                     <span>1</span>[[${gunma.get('name')}]]</a>
 
                             </li>
                             <li th:each="saitama : ${saitama}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/11/'+${saitama  .get('id')}+'/calc'}">
                                     <span>1</span>[[${saitama.get('name')}]]</a>
 
                             </li>
                             <li th:each="chiba : ${chiba}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/12/'+${chiba    .get('id')}+'/calc'}">
                                     <span>1</span>[[${chiba.get('name')}]]</a>
 
                             </li>
 
                             <li th:each=" tokyo: ${tokyo}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/13/'+${tokyo    .get('id')}+'/calc'}">
                                     <span>1</span>[[${tokyo.get('name')}]]</a>
 
                             </li>
                             <li th:each="niigata : ${niigata}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/14/'+${kanagawa .get('id')}+'/calc'}">
                                     <span>1</span>[[${niigata.get('name')}]]</a>
 
                             </li>
                             <li th:each="kanagawa: ${kanagawa}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/15/'+${niigata  .get('id')}+'/calc'}">
                                     <span>1</span>[[${kanagawa.get('name')}]]</a>
 
                             </li>
                             <li th:each="toyama : ${toyama}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/16/'+${toyama   .get('id')}+'/calc'}">
                                     <span>1</span>[[${toyama.get('name')}]]</a>
 
                             </li>
                             <li th:each="ishikawa : ${ishikawa}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/17/'+${ishikawa .get('id')}+'/calc'}">
                                     <span>1</span>[[${ishikawa.get('name')}]]</a>
 
                             </li>
                             <li th:each="fukui : ${fukui}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/18/'+${fukui    .get('id')}+'/calc'}">
                                     <span>1</span>[[${fukui.get('name')}]]</a>
 
                             </li>
                             <li th:each="yamanashi : ${yamanashi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/19/'+${yamanashi.get('id')}+'/calc'}">
                                     <span>1</span>[[${yamanashi.get('name')}]]</a>
 
                             </li>
                             <li th:each="nagano : ${nagano}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/20/'+${nagano   .get('id')}+'/calc'}">
                                     <span>1</span>[[${nagano.get('name')}]]</a>
 
                             </li>
                             <li th:each="gifu : ${gifu}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/21/'+${gifu     .get('id')}+'/calc'}">
                                     <span>1</span>[[${gifu.get('name')}]]</a>
 
                             </li>
                             <li th:each="shizuoka : ${shizuoka}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/22/'+${shizuoka .get('id')}+'/calc'}">
                                     <span>1</span>[[${shizuoka.get('name')}]]</a>
 
                             </li>
                             <li th:each="aichi : ${aichi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/23/'+${aichi    .get('id')}+'/calc'}">
                                     <span>1</span>[[${aichi.get('name')}]]</a>
 
                             </li>
                             <li th:each="mie : ${mie}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/24/'+${mie      .get('id')}+'/calc'}">
                                     <span>1</span>[[${mie.get('name')}]]</a>
 
                             </li>
                             <li th:each="shiga : ${shiga}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/25/'+${shiga    .get('id')}+'/calc'}">
                                     <span>1</span>[[${shiga.get('name')}]]</a>
 
                             </li>
                             <li th:each="kyoto: ${kyoto}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/26/'+${kyoto    .get('id')}+'/calc'}">
                                     <span>1</span>[[${kyoto.get('name')}]]</a>
 
                             </li>
                             <li th:each="oosaka : ${oosaka}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/27/'+${oosaka   .get('id')}+'/calc'}">
                                     <span>1</span>[[${oosaka.get('name')}]]</a>
 
                             </li>
                             <li th:each="hyougo : ${hyougo}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/28/'+${hyougo   .get('id')}+'/calc'}">
                                     <span>1</span>[[${hyougo.get('name')}]]</a>
 
                             </li>
                             <li th:each="nara: ${nara}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/29/'+${nara     .get('id')}+'/calc'}">
                                     <span>1</span>[[${nara.get('name')}]]</a>
 
                             </li>
                             <li th:each="wakayama : ${wakayama}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/30/'+${wakayama .get('id')}+'/calc'}">
                                     <span>1</span>[[${wakayama.get('name')}]]</a>
 
                             </li>
                             <li th:each="tottori : ${tottori}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/31/'+${tottori  .get('id')}+'/calc'}">
                                     <span>1</span>[[${tottori.get('name')}]]</a>
 
                             </li>
                             <li th:each="shimane : ${shimane}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/32/'+${shimane  .get('id')}+'/calc'}">
                                     <span>1</span>[[${shimane.get('name')}]]</a>
 
 
 
                             </li>
                             <li th:each="okayama : ${okayama}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/33/'+${okayama  .get('id')}+'/calc'}">
                                     <span>1</span>[[${okayama.get('name')}]]</a>
 
                             </li>
                             <li th:each="hiroshima: ${hiroshima}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/34/'+${hiroshima.get('id')}+'/calc'}">
                                     <span>1</span>[[${hiroshima.get('name')}]]</a>
 
                             </li>
                             <li th:each="yamaguchi : ${yamaguchi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/35/'+${yamaguchi.get('id')}+'/calc'}">
                                     <span>1</span>[[${yamaguchi.get('name')}]]</a>
 
                             </li>
                             <li th:each="tokushima : ${tokushima}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/36/'+${tokushima.get('id')}+'/calc'}">
                                     <span>1</span>[[${tokushima.get('name')}]]</a>
 
                             </li>
                             <li th:each="kagawa : ${kagawa}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/37/'+${kagawa   .get('id')}+'/calc'}">
                                     <span>1</span>[[${kagawa.get('name')}]]</a>
 
                             </li>
                             <li th:each="ehime : ${ehime}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/38/'+${ehime    .get('id')}+'/calc'}">
                                     <span>1</span>[[${ehime.get('name')}]]</a>
 
                             </li>
                             <li th:each="kouchi : ${kouchi}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/39/'+${kouchi   .get('id')}+'/calc'}">
                                     <span>1</span>[[${kouchi.get('name')}]]</a>
 
                             </li>
                             <li th:each="fukuoka : ${fukuoka}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="{'/40/'+${fukuoka  .get('id')}+'/calc'}">
                                     <span>1</span>[[${fukuoka.get('name')}]]</a>
 
                             </li>
                             <li th:each="saga : ${saga}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/41/'+${saga     .get('id')}+'/calc'}">
                                     <span>1</span>[[${saga.get('name')}]]</a>
 
                             </li>
                             <li th:each="nagasaki : ${nagasaki}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/42/'+${nagasaki .get('id')}+'/calc'}">
                                     <span>1</span>[[${nagasaki.get('name')}]]</a>
 
                             </li>
                             <li th:each="kumamoto : ${kumamoto}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/43/'+${kumamoto .get('id')}+'/calc'}">
                                     <span>1</span>[[${kumamoto.get('name')}]]</a>
 
                             </li>
                             <li th:each="ooita : ${ooita}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/44/'+${ooita    .get('id')}+'/calc'}">
                                     <span>1</span>[[${ooita.get('name')}]]</a>
 
                             </li>
                             <li th:each="miyazaki : ${miyazaki}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/45/'+${miyazaki .get('id')}+'/calc'}">
                                     <span>1</span>[[${miyazaki.get('name')}]]</a>
 
                             </li>
                              <li th:each="kagoshima : ${kagoshima}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/46/'+${kagoshima.get('id')}+'/calc'}">
                                     <span>1</span>[[${kagoshima.get('name')}]]</a>
 
                             </li>
                              <li th:each="okinawa : ${okinawa}">
-                                <a th:href="@{http://localhost:8080/calc}">
+                                <a th:href="@{'/47/'+${okinawa  .get('id')}+'/calc'}">
                                     <span>1</span>[[${okinawa.get('name')}]]</a>
 
                             </li>

@@ -16,19 +16,22 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HokkaidoController {
 
+	String pref="hokkaido";
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
+//num=id 各都道府県のidを使ってデータベースから名前を取得して変数prefに格納したい @PathVariable int num
 @RequestMapping("/1")
 	public ModelAndView city(ModelAndView mav) {
-		// TODO 自動生成されたメソッド・スタブ
 
+	//List<Map<String, Object>> pref = jdbcTemplate.queryForList("select * from aria2 where id = "+2);
+
+	//String pref2=pref.get();
 	 //使用するビューの名前(HTMLファイル名）を入力（テンプレート）
 		mav.setViewName("city");
 		List<Map<String,Object>>list;
-		list=jdbcTemplate.queryForList("select * from hokkaido");
-		//テンプレート側の変数（左）に格納した配列変数（右）を保管する
-		mav.addObject("hokkaido", list);
+		list=jdbcTemplate.queryForList("select * from "+pref);
+		mav.addObject(pref, list);
 		return mav;
 	}
 
