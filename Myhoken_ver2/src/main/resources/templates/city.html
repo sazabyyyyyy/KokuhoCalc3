@@ -110,14 +110,14 @@
                                     <span>1</span>[[${tokyo.get('name')}]]</a>
 
                             </li>
-                            <li th:each="niigata : ${niigata}">
+                            <li th:each="kanagawa : ${kanagawa}">
                                 <a th:href="@{'/14/'+${kanagawa .get('id')}+'/calc'}">
-                                    <span>1</span>[[${niigata.get('name')}]]</a>
+                                    <span>1</span>[[${kanagawa.get('name')}]]</a>
 
                             </li>
-                            <li th:each="kanagawa: ${kanagawa}">
+                            <li th:each="niigata: ${niigata}">
                                 <a th:href="@{'/15/'+${niigata  .get('id')}+'/calc'}">
-                                    <span>1</span>[[${kanagawa.get('name')}]]</a>
+                                    <span>1</span>[[${niigata.get('name')}]]</a>
 
                             </li>
                             <li th:each="toyama : ${toyama}">

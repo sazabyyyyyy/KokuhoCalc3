@@ -48,7 +48,7 @@
 
                             <!-- thymeleafのeach文とインライン処理で埋め込んだ変数配列からHTML出力する。 -->
                             <li th:each="hokkaido: ${hokkaido}">
-                                <a href="http://localhost:8080/1">
+                                <a href="http://localhost:8080/a/1">
                                     <span>1</span>[[${hokkaido.get('name')}]]</a>
                             </li>
                         </ul>
@@ -62,7 +62,7 @@
                             <!-- thymeleafのeach文とインライン処理で埋め込んだ変数配列からHTML出力する。 -->
                             <li th:each="touhoku: ${touhoku}">
                                 <!-- 各県にリンク付ける。URLの最後にDBのidをつける。配列の中身をeach文で出力（2～7） -->
-                                <a th:href="@{'/'+${touhoku.get('id')}}">
+                                <a th:href="@{'/a/'+${touhoku.get('id')}}">
 
                                     <!-- 地方の県名の配列の中身をeach文で出力 -->
                                     <span>2</span>[[${touhoku.get('name')}]]</a>
@@ -76,7 +76,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="kantou: ${kantou}">
-                                <a th:href="@{'/'+${kantou.get('id')}}">
+                                <a th:href="@{'/a/'+${kantou.get('id')}}">
                                     <span>3</span>[[${kantou.get('name')}]]</a>
                             </li>
                         </ul>
@@ -89,7 +89,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="hokuriku: ${hokuriku}">
-                                <a th:href="@{'/'+${hokuriku.get('id')}}">
+                                <a th:href="@{'/a/'+${hokuriku.get('id')}}">
                                     <span>4</span>[[${hokuriku.get('name')}]]</a>
                             </li>
                         </ul>
@@ -101,7 +101,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="toukai: ${toukai}">
-                                <a th:href="@{'/'+${toukai.get('id')}}">
+                                <a th:href="@{'/a/'+${toukai.get('id')}}">
                                     <span>5</span>[[${toukai.get('name')}]]</a>
                             </li>
                         </ul>
@@ -113,7 +113,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="kinki: ${kinki}">
-                                <a th:href="@{'/'+${kinki.get('id')}}">
+                                <a th:href="@{'/a/'+${kinki.get('id')}}">
                                     <span>6</span>[[${kinki.get('name')}]]</a>
                             </li>
                         </ul>
@@ -125,7 +125,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="chugoku: ${chugoku}">
-                                <a th:href="@{'/'+${chugoku.get('id')}}">
+                                <a th:href="@{'/a/'+${chugoku.get('id')}}">
                                     <span>7</span>[[${chugoku.get('name')}]]</a>
                             </li>
                         </ul>
@@ -137,7 +137,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="sikoku: ${sikoku}">
-                                <a th:href="@{'/'+${sikoku.get('id')}}">
+                                <a th:href="@{'/a/'+${sikoku.get('id')}}">
                                     <span>8</span>[[${sikoku.get('name')}]]</a>
                             </li>
                         </ul>
@@ -149,7 +149,7 @@
                     <td>
                         <ul class="clearfix">
                             <li th:each="kyushu: ${kyushu}">
-                                <a th:href="@{'/'+${kyushu.get('id')}}">
+                                <a th:href="@{'/a/'+${kyushu.get('id')}}">
                                     <span>9</span>[[${kyushu.get('name')}]]</a>
                             </li>
                         </ul>
