@@ -1,5 +1,10 @@
 package com.kaneko.springboot;
 
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +23,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CalcController {
 
+	//URLパラメータの変数
+	int pref;
+	int city;
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+
 	//メソッドを指定してGETとPOSTを区別して書く。
-
-
 	//URLのパラメータをnumで受け取り、numを使用するために@PathVariableをつける。
 	@RequestMapping(value="/{num1}/{num2}/calc",method=RequestMethod.GET)
 	public ModelAndView calc(ModelAndView mav,@PathVariable int num1,@PathVariable int num2){
@@ -28,12 +39,13 @@ public class CalcController {
 
 			mav.setViewName("calc");
 			mav.addObject("msg", "年齢を選んでください");
-		//	mav.addObject("msg2", "昨年の年収を選んでください");
-			System.err.println(num1+num2);
+
+			//URLから受け取った値をsendメソッドで使うためにグローバル変数に格納
+			pref=num1;
+			city=num2;
+			//System.err.println(pref+city);
 			return mav;
-
-
-			}
+	}
 
 	@RequestMapping(value="/calc",method=RequestMethod.POST)
 	//sendメソッドでフォームからの入力を受け取る
@@ -44,46 +56,56 @@ public class CalcController {
 			@RequestParam(value="select1",required=false)int select1,
 			ModelAndView mav) {
 
-		//国保計算のための各変数
+
 		//参考資料　https://slack-files.com/TC74XEUSW-FDM026YQ2-6f00fe4489
 		//        http://www.kokuho-keisan.com/calc/calc.php?area=011002
 
-				//所得割
-				double ryourituA=0.093;
-				double ryourituB=0.026;
-				double ryourituC=0.03383;
+		//URLから受け取った変数をクエリ文に組み込む。テーブルに紐付いている。対象の保険料計算データをリストに格納。
+		List<Map<String, Object>>hokenryou=jdbcTemplate.queryForList("select * from hokenryou where pref_id ="+pref+ " AND city_id2 = "+city);
 
-				//均等割
-				int kintoA=17000;
-				int kintoB=4680;
-				int kintoC=6420;
+		//テスト用
+//		double jj=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu1").toString()))/100;;
+//		System.err.println(jj);
 
-				//平均割
-				int byodoA=33100;
-				int byodoB=9090;
-				int byodoC=9570;
+		//国保計算のための各変数
+		//型変換必要。 オブジェクト型→String→double
+		//所得割
+		double ryourituA=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu1").toString()))/100;
+		double ryourituB=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu2").toString()))/100;
+		double ryourituC=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu3").toString()))/100;
 
-				//所得の計算（年収から控除したあとの金額）。年収によって計算変わる。
-				int shotoku160=-650000;
-				double shotoku180=select1*10000*0.6;
-				double shotoku360=select1*10000*0.7-180000-330000;
-				double shotoku660=select1*10000*0.8-540000;
-				double shotoku1000=select1*10000*0.9-1200000;
+		//均等割
+		int kintoA=Integer.parseInt(hokenryou.get(pref-1).get("kinto1").toString());
+		int kintoB=Integer.parseInt(hokenryou.get(pref-1).get("kinto2").toString());
+		int kintoC=Integer.parseInt(hokenryou.get(pref-1).get("kinto3").toString());
 
-				//39歳以下の保険料
-				int hokenryo160=(int) (shotoku160*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-				int hokenryo180=(int) (shotoku180*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-				int hokenryo360=(int) (shotoku360*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-				int hokenryo660=(int) (shotoku660*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-				int hokenryo1000=(int) (shotoku1000*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		//平均割
+		int byodoA=Integer.parseInt(hokenryou.get(pref-1).get("byodo1").toString());
+		int byodoB=Integer.parseInt(hokenryou.get(pref-1).get("byodo2").toString());;
+		int byodoC=Integer.parseInt(hokenryou.get(pref-1).get("byodo3").toString());;
 
-				//40歳以上の保険料(介護保険追加)
-				int hokenryo160K=(int) (shotoku160*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-				int hokenryo180K=(int) (shotoku180*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-				int hokenryo360K=(int) (shotoku360*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-				int hokenryo660K=(int) (shotoku660*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-				int hokenryo1000K=(int) (shotoku1000*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-		        //System.err.println(hokenryo360);
+		//所得の計算（年収から控除したあとの金額）。年収によって計算変わる。
+		int shotoku160=-650000;
+		double shotoku180=select1*10000*0.6;
+		double shotoku360=select1*10000*0.7-180000-330000;
+		double shotoku660=select1*10000*0.8-540000;
+		double shotoku1000=select1*10000*0.9-1200000;
+
+		//39歳以下の保険料
+		int hokenryo160=(int) (shotoku160*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int hokenryo180=(int) (shotoku180*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int hokenryo360=(int) (shotoku360*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int hokenryo660=(int) (shotoku660*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int hokenryo1000=(int) (shotoku1000*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+
+		//40歳以上の保険料(介護保険追加)
+		int hokenryo160K=(int) (shotoku160*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int hokenryo180K=(int) (shotoku180*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int hokenryo360K=(int) (shotoku360*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int hokenryo660K=(int) (shotoku660*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int hokenryo1000K=(int) (shotoku1000*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+        //System.err.println(hokenryo360);
+
 
 		//年齢と年収による条件分岐プログラム
 		//39歳以下の場合
