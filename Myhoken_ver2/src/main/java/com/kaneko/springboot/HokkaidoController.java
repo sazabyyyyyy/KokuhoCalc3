@@ -29,7 +29,7 @@ public class HokkaidoController {
     Map<Integer,String>pref=new HashMap<>();
     pref.put( 1, "hokkaido");
     pref.put( 2, "aomori");
-    pref.put( 3, "iwate ");
+    pref.put( 3, "iwate");
     pref.put( 4, "miyagi");
     pref.put( 5, "akita");
     pref.put( 6, "yamagata");

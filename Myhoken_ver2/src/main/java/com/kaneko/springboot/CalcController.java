@@ -43,7 +43,7 @@ public class CalcController {
 			//URLから受け取った値をsendメソッドで使うためにグローバル変数に格納
 			pref=num1;
 			city=num2;
-			//System.err.println(pref+city);
+			System.err.println(pref+city);
 			return mav;
 	}
 
@@ -56,7 +56,7 @@ public class CalcController {
 			@RequestParam(value="select1",required=false)int select1,
 			ModelAndView mav) {
 
-
+		System.err.println(pref+city);
 		//参考資料　https://slack-files.com/TC74XEUSW-FDM026YQ2-6f00fe4489
 		//        http://www.kokuho-keisan.com/calc/calc.php?area=011002
 
@@ -64,25 +64,25 @@ public class CalcController {
 		List<Map<String, Object>>hokenryou=jdbcTemplate.queryForList("select * from hokenryou where pref_id ="+pref+ " AND city_id2 = "+city);
 
 		//テスト用
-//		double jj=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu1").toString()))/100;;
+//		double jj=(Double.parseDouble(hokenryou.get(0).get("ryouritu1").toString()))/100;;
 //		System.err.println(jj);
 
 		//国保計算のための各変数
 		//型変換必要。 オブジェクト型→String→double
 		//所得割
-		double ryourituA=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu1").toString()))/100;
-		double ryourituB=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu2").toString()))/100;
-		double ryourituC=(Double.parseDouble(hokenryou.get(pref-1).get("ryouritu3").toString()))/100;
+		double ryourituA=(Double.parseDouble(hokenryou.get(0).get("ryouritu1").toString()))/100;
+		double ryourituB=(Double.parseDouble(hokenryou.get(0).get("ryouritu2").toString()))/100;
+		double ryourituC=(Double.parseDouble(hokenryou.get(0).get("ryouritu3").toString()))/100;
 
 		//均等割
-		int kintoA=Integer.parseInt(hokenryou.get(pref-1).get("kinto1").toString());
-		int kintoB=Integer.parseInt(hokenryou.get(pref-1).get("kinto2").toString());
-		int kintoC=Integer.parseInt(hokenryou.get(pref-1).get("kinto3").toString());
+		int kintoA=Integer.parseInt(hokenryou.get(0).get("kinto1").toString());
+		int kintoB=Integer.parseInt(hokenryou.get(0).get("kinto2").toString());
+		int kintoC=Integer.parseInt(hokenryou.get(0).get("kinto3").toString());
 
 		//平均割
-		int byodoA=Integer.parseInt(hokenryou.get(pref-1).get("byodo1").toString());
-		int byodoB=Integer.parseInt(hokenryou.get(pref-1).get("byodo2").toString());;
-		int byodoC=Integer.parseInt(hokenryou.get(pref-1).get("byodo3").toString());;
+		int byodoA=Integer.parseInt(hokenryou.get(0).get("byodo1").toString());
+		int byodoB=Integer.parseInt(hokenryou.get(0).get("byodo2").toString());;
+		int byodoC=Integer.parseInt(hokenryou.get(0).get("byodo3").toString());;
 
 		//所得の計算（年収から控除したあとの金額）。年収によって計算変わる。
 		int shotoku160=-650000;
