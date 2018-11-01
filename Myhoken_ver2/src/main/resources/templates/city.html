@@ -32,6 +32,14 @@
     <main>
         <div id="mainimg">
             <img src="/cat1.PNG" alt="ねこ">
+            <nav id="bc">
+	            <div class="wrapper">
+	            	<ul>
+	            		<li><a href="/">HOME</a></li>
+	            		<li>&nbsp;&raquo;<strong>北海道</strong></li>
+	            	</ul>
+	            </div>
+            </nav>
         </div>
 
         <div class="wrapper">
@@ -243,7 +251,7 @@
 
                             </li>
                             <li th:each="fukuoka : ${fukuoka}">
-                                <a th:href="{'/40/'+${fukuoka  .get('id')}+'/calc'}">
+                                <a th:href="@{'/40/'+${fukuoka  .get('id')}+'/calc'}">
                                     <span>1</span>[[${fukuoka.get('name')}]]</a>
 
                             </li>
@@ -282,12 +290,6 @@
                                     <span>1</span>[[${okinawa.get('name')}]]</a>
 
                             </li>
-
-
-
-
-
-
 
                         </ul>
                     </td>

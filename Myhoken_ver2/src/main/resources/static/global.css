@@ -124,10 +124,33 @@ p#hd_login a {
     width: 100%;
     overflow: hidden;
     margin-bottom: 50px;
+    position: relative;
 }
 #mainimg img {
     max-width: initial;
     width: 100%;
+}
+#bc {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	background-color: rgba(0,0,0,0.4);
+	padding: 10px 0;
+}
+#bc ul li {
+	display: inline-block;
+	color: #fff;
+}
+#bc ul li a {
+	color: #fff;
+	text-decoration: underline;
+	margin-left: 8px;
+}
+#bc ul li strong {
+	color: #fff;
+	margin-left: 8px;
 }
 /***** Footer ******************************/
 #footer {

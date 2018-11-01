@@ -43,6 +43,7 @@ public class CalcController {
 			//URLから受け取った値をsendメソッドで使うためにグローバル変数に格納
 			pref=num1;
 			city=num2;
+			//test
 			System.err.println(pref+city);
 			return mav;
 	}
