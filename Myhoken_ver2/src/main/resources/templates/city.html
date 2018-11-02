@@ -36,14 +36,15 @@
 	            <div class="wrapper">
 	            	<ul>
 	            		<li><a href="/">HOME</a></li>
-	            		<li>&nbsp;&raquo;<strong>北海道</strong></li>
+	            		<li>&nbsp;&raquo;<strong th:text="${pref_ja}">北海道</strong></li>
 	            	</ul>
 	            </div>
             </nav>
         </div>
 
         <div class="wrapper">
-            <p id="lead" th:text="#{content.sichou}"></p>
+        <!-- 選択に応じて都道府県名の表示が変わる -->
+            <p id="lead" th:text="${pref_ja}+#{content.sichou}"></p>
 
             <!-- リンクを付けるためにインライン処理する -->
             <table id="city_tbl" th:inline="text" >

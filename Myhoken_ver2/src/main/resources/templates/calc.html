@@ -36,15 +36,16 @@
             <nav id="bc">
 	            <div class="wrapper">
 	            	<ul>
+	            	<!-- パンくずリスト -->
 	            		<li><a href="/">HOME</a></li>
-	            		<li>&nbsp;&raquo;<a href="">北海道</a></li>
-	            		<li>&nbsp;&raquo;<strong>札幌市</strong></li>
+	            		<li>&nbsp;&raquo;<a th:href="@{'/a/'+${pref_num}}" th:text="${pref_ja}">北海道</a></li>
+	            		<li>&nbsp;&raquo;<strong th:text="${city_name}">札幌市</strong></li>
 	            	</ul>
 	            </div>
             </nav>
 	</div>
 	<div class="wrapper">
-    <p id="lead">国民保険計算</p>
+    <p id="lead" th:text="${pref_ja}+${city_name}+#{content.calc}">の国民保険計算</p>
     <form action="/calc" method="post">
     <p class='age' th:text="${msg}">please wait...</p>
 	<ul id="select_age">

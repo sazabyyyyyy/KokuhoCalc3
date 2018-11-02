@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ToppageController {
 
+	static List<Map<String,Object>>zenkoku;
 	//データベース接続に使うアノテーション。
 	@Autowired
 	JdbcTemplate jdbcTemplate;
@@ -30,7 +31,7 @@ public class ToppageController {
 			//各地方の変数配列に都道府県をデータベースから抽出して配列に格納する。
 			//thymeleafのeach文とインライン処理で埋め込んだ変数からHTML出力する。
 
-			List<Map<String,Object>>zenkoku;
+
 			zenkoku=jdbcTemplate.queryForList("select * from aria");
 
 			List<Map<String,Object>>hokkaido;

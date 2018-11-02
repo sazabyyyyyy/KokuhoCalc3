@@ -27,6 +27,9 @@ public class CalcController {
 	int pref;
 	int city;
 
+	//選択された市町村名を格納
+	String city_name;
+
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -37,14 +40,22 @@ public class CalcController {
 	public ModelAndView calc(ModelAndView mav,@PathVariable int num1,@PathVariable int num2){
 
 
+		//URLから受け取った値をsendメソッドで使うためにグローバル変数に格納
+		pref=num1;
+		city=num2;
+		//test
+		System.err.println(pref+city);
+
+		city_name=HokkaidoController.city_list.get(num2-1).get("name").toString();
+
 			mav.setViewName("calc");
 			mav.addObject("msg", "年齢を選んでください");
+			//都道府県＆市町村名表示。パンくず。
+			mav.addObject("pref_ja", HokkaidoController.pref_ja);
+			mav.addObject("city_name", city_name);
+			mav.addObject("pref_num", pref);
 
-			//URLから受け取った値をsendメソッドで使うためにグローバル変数に格納
-			pref=num1;
-			city=num2;
-			//test
-			System.err.println(pref+city);
+
 			return mav;
 	}
 
@@ -190,6 +201,10 @@ public class CalcController {
 
 		//テンプレート側の変数（左）に格納した配列変数（右）を保管する
 		mav.setViewName("calc");
+		//都道府県＆市町村名表示。パンくず。
+		mav.addObject("pref_ja", HokkaidoController.pref_ja);
+		mav.addObject("city_name", city_name);
+		mav.addObject("pref_num", pref);
 		return mav;
 	}}
 
