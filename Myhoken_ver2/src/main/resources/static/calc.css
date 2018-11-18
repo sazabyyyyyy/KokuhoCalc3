@@ -59,3 +59,33 @@ ul#select_age li label:checked {
 	background-color: pink;
 }
 
+
+/* ------------------------------------------------------------------------------------------------------------------------
+ Responsive-Breakpoint-2 ( 640px )
+
+------------------------------------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width:644px)
+{
+
+	p#lead {
+
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+	p.age,
+	p.nenshu {
+		font-size: 20px;
+	}
+	ul#select_age li {
+		padding: 0;
+	}
+
+	.button7{
+		width:90%;
+		height: 50px;
+		line-height: 50px;
+		font-size: 22px;
+	}
+
+}

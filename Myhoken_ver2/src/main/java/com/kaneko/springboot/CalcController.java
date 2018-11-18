@@ -103,20 +103,35 @@ public class CalcController {
 		double shotoku660=select1*10000*0.8-540000;
 		double shotoku1000=select1*10000*0.9-1200000;
 
-		//39歳以下の保険料
-		int hokenryo160=(int) (shotoku160*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-		int hokenryo180=(int) (shotoku180*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-		int hokenryo360=(int) (shotoku360*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-		int hokenryo660=(int) (shotoku660*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
-		int hokenryo1000=(int) (shotoku1000*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
 
-		//40歳以上の保険料(介護保険追加)
-		int hokenryo160K=(int) (shotoku160*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-		int hokenryo180K=(int) (shotoku180*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-		int hokenryo360K=(int) (shotoku360*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-		int hokenryo660K=(int) (shotoku660*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
-		int hokenryo1000K=(int) (shotoku1000*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		//39歳以下の保険料計算
+		int h160=(int) (shotoku160*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int h180=(int) (shotoku180*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int h360=(int) (shotoku360*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int h660=(int) (shotoku660*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+		int h1000=(int) (shotoku1000*(ryourituA+ryourituB)+kintoA+kintoB+byodoA+byodoB);
+
+		//40歳以上の保険料計算(介護保険追加)
+		int h160k=(int) (shotoku160*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int h180k=(int) (shotoku180*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int h360k=(int) (shotoku360*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int h660k=(int) (shotoku660*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+		int h1000k=(int) (shotoku1000*(ryourituA+ryourituB+ryourituC)+kintoA+kintoB+kintoC+byodoA+byodoB+byodoC);
+
         //System.err.println(hokenryo360);
+
+		//計算した保険料の数値にカンマ区切り入れる
+        String hokenryo160=String.format("%,d", h160);
+        String hokenryo180=String.format("%,d", h180);
+        String hokenryo360=String.format("%,d", h360);
+        String hokenryo660=String.format("%,d", h660);
+        String hokenryo1000=String.format("%,d", h1000);
+
+        String hokenryo160k=String.format("%,d", h160k);
+        String hokenryo180k=String.format("%,d", h180k);
+        String hokenryo360k=String.format("%,d", h360k);
+        String hokenryo660k=String.format("%,d", h660k);
+        String hokenryo1000k=String.format("%,d", h1000k);
 
 
 		//年齢と年収による条件分岐プログラム
@@ -165,19 +180,19 @@ public class CalcController {
 	    case 100:
 		case 120:
 		case 140:
-			mav.addObject("msg","あなたの国民保険料は年額"+(hokenryo160K)+ "円です");
+			mav.addObject("msg","あなたの国民保険料は年額"+(hokenryo160k)+ "円です");
 			break;
 
 		case 160:
 		case 180:
-			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo180K+"円です");
+			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo180k+"円です");
 			break;
 
 		case 200:
 		case 250:
 		case 300:
 		case 350:
-			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo360K+"円です");
+			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo360k+"円です");
 			break;
 
 		case 400:
@@ -186,7 +201,7 @@ public class CalcController {
 		case 550:
 		case 600:
 		case 650:
-			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo660K+"円です");
+			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo660k+"円です");
 			break;
 
 		case 700:
@@ -194,7 +209,7 @@ public class CalcController {
 		case 800:
 		case 850:
 		case 900:
-			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo1000K+"円です");
+			mav.addObject("msg","あなたの国民保険料は年額"+hokenryo1000k+"円です");
 			break;
 		}}
 

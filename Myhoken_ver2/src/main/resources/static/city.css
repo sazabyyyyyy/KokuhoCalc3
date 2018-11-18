@@ -7,7 +7,7 @@ p#lead {
 }
 table#city_tbl {
 	width: 100%;
-	border-collapse: collapse:
+	border-collapse: collapse;
 	margin: 0 auto;
 }
 table#city_tbl th {
@@ -43,4 +43,43 @@ table#city_tbl td ul li a:hover {
 }
 table#city_tbl td ul li a span {
 	display: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------
+ Responsive-Breakpoint-2 ( 640px )
+
+------------------------------------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width:644px)
+{
+	p#lead {
+
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+
+	table#city_tbl td {
+		padding: 10px;
+	}
+	table#city_tbl td ul li {
+		width: 33%;
+
+	}
+	table#city_tbl td ul li a {
+		padding: 5px 0 5px 10px;
+		font-size: 16px;
+		position:relative;
+	}
+	table#city_tbl td ul li a::before {
+    	content: "";
+		width: 0;
+		height: 0;
+		border: 5px solid transparent;
+		border-left: 5px solid #ff6600;
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+
+
 }

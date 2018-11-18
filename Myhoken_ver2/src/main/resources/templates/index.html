@@ -48,7 +48,7 @@
 
                             <!-- thymeleafのeach文とインライン処理で埋め込んだ変数配列からHTML出力する。 -->
                             <li th:each="hokkaido: ${hokkaido}">
-                                <a href="http://localhost:8080/a/1">
+                                <a href="/a/1">
                                     <span>1</span>[[${hokkaido.get('name')}]]</a>
                             </li>
                         </ul>

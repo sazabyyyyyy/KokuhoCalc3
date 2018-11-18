@@ -56,3 +56,80 @@ pre {
     padding: 10px;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------
+ Responsive-Breakpoint-1 ( 1200px )
+
+------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------
+ Responsive-Breakpoint-2 ( 960px )
+
+------------------------------------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width:644px)
+{
+    p#lead {
+
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    /* Table */
+    table.area_table {
+        table-layout: fixed;
+    }
+    table.area_table th {
+        width: 100%;
+        padding: 5px 10px;
+        font-size: 18px;
+        display:block;
+        box-sizing: border-box;
+        background-color: wheat
+    }
+    table.area_table th i {
+        margin-right: 10px;
+
+    }
+    table.area_table td {
+        padding: 10px;
+        width: 100%;
+        display:block;
+        box-sizing: border-box;
+    }
+    table.area_table td ul {
+        border-left: none;
+    }
+    table.area_table td ul li {
+        width: 50%;
+
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        margin-top: 0px;
+    }
+    table.area_table td ul li a {
+        text-align: left;
+        padding: 5px 10px;
+        font-size: 16px;
+        position:relative;
+
+    }
+    table.area_table td ul li a::before {
+    	content: "";
+		width: 0;
+		height: 0;
+		border: 5px solid transparent;
+		border-left: 5px solid #ff6600;
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+    table.area_table td ul li a:hover {
+        background-color: transparent;
+    }
+    table.area_table td ul li a span {
+        display: none;
+    }
+    pre {
+        border: solid 3px #ddd;
+        padding: 10px;
+    }
+}
